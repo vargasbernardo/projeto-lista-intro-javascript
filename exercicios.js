@@ -64,7 +64,7 @@ function imprimeTresCoresFavoritas() {
   const corFavorita1 = prompt('Qual a cor que voce mais gosta?')
   const corFavorita2 = prompt('Qual a segunda cor que voce mais gosta?')
   const corFavorita3 = prompt('Qual a terceira cor que voce mais gosta?')
-  let newArray = []
+  const newArray = []
   // newArray[0] = corFavorita1
   // newArray[1] = corFavorita2
   // newArray[2] = corFavorita3
@@ -115,22 +115,36 @@ function checaStringsMesmoTamanho(string1, string2) {
 // EXERCÍCIO 09
 function retornaPrimeiroElemento(array) {
   // implemente sua lógica aqui
-   let newArray = [array]
-
-   return newArray.first()
+  const newArray = array
+  
+  return newArray[0]
+  
 
 
 }
 
-// EXERCÍCIO 10
+// EXERCÍCIO 10 (FEITO)
 function retornaUltimoElemento(array) {
   // implemente sua lógica aqui
+  const newArray = array
+  const array2 = newArray.pop()
+
+  return array2
 
 }
 
-// EXERCÍCIO 11
+
+// EXERCÍCIO 11 (FEITO)
 function trocaPrimeiroEUltimo(array) {
   // implemente sua lógica aqui
+  const meuArray = array
+  const primeiroElemento = array.shift() //1
+  const ultimoElemento = array.pop() //5
+  meuArray.unshift(ultimoElemento)
+  meuArray.push(primeiroElemento)
+  
+
+  return meuArray
 
 }
 
@@ -145,25 +159,53 @@ function checaIgualdadeDesconsiderandoCase(string1, string2) {
 // EXERCÍCIO 13
 function checaRenovacaoRG() {
   // implemente sua lógica aqui
-  const anoAtual = Number(prompt('Informe o ano atual: '))
-  const anoDeNascimentoPessoa = Number(prompt('Informe o ano de nascimento: '))
-  const anoEmissaoRG = Number(prompt('Informe o ano em que o RG foi emitido: '))
+  const anoAtual = Number(prompt('Digite o ano Atual: '))
+  const anoDeNascimento = Number(prompt('Digite o ano de nascimento: '))
+  const anoDeEmissaoRG = Number(prompt('Digite o ano de emissao do RG: '))
 
-  if (anoAtual - anoDeNascimentoPessoa <= 20) {
-    
-
+  const funcionaPeloAmorDeDeus = () => {
+    if (anoAtual - anoDeNascimento <= 20 && anoAtual - anoDeEmissaoRG === 5) {
+      return true
+    } else if ((anoAtual - anoDeNascimento >= 20 && anoAtual - anoDeNascimento < 50) && anoAtual - anoDeEmissaoRG >= 10) {
+      return true
+    } else if (anoAtual - anoDeNascimento === 50 && anoAtual - anoDeEmissaoRG >= 10) {
+      return true
+    } else if (anoAtual - anoDeNascimento >= 50 && anoAtual - anoDeEmissaoRG >= 15) {
+      return true
+    } else {
+      return false
+    }
   }
+  console.log(funcionaPeloAmorDeDeus())
 
 }
 
 // EXERCÍCIO 14
 function checaAnoBissexto(ano) {
   // implemente sua lógica aqui
+  if (ano % 400 === 0) {
+    return true 
+  } else if (ano % 4 === 0 && ano % 100 !== 0) {
+    return true
+  } else {
+    return false
+  }
+
 
 }
 
 // EXERCÍCIO 15
 function checaValidadeInscricaoLabenu() {
   // implemente sua lógica aqui
+  const maiorDezoito = prompt('Voce tem mais de 18 anos?')
+  const ensinoMedio = prompt('Voce possui ensino medio completo?')
+  const disponibilidade = prompt('Voce possui disponibilidade exclusiva durante os horarios do curso?')
+
+  const checarValidade1 = maiorDezoito === 'sim'
+  const checarValidade2 = ensinoMedio === 'sim'
+  const checarValidade3 = disponibilidade === 'sim'
+
+  const validado = checarValidade1 && checarValidade2 && checarValidade3
+  console.log(validado)
 
 }
